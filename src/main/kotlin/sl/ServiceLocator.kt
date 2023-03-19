@@ -32,9 +32,7 @@ interface ServiceLocator {
             return true
         }
 
-        override fun hashCode(): Int {
-            return 31 * type.hashCode() + named.hashCode()
-        }
+        override fun hashCode(): Int = 31 * type.hashCode() + named.hashCode()
     }
 }
 

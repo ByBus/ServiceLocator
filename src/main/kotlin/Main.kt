@@ -5,7 +5,7 @@ fun main() {
         Storage::class named "other" from Provider.Single(OtherStorage(100)),
         Storage::class from Provider.Single(MyStorage(5)),
         StorageRepository::class from Provider.Factory { StorageRepository(get(), get("other"),2) },
-        MyStorage::class from Provider.Lazy { MyStorage(13) },
+        MyStorage::class from Provider.LazyWeak { MyStorage(13) },
     )
 
     val storage1 = serviceLocator.get<Storage>()
